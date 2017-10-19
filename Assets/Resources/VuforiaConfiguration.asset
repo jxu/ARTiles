@@ -50,7 +50,6 @@ MonoBehaviour:
     dataSetsToActivate:
     - VuforiaMars_Images
     - VuforiaMars_Object_OT
-    - VuforiaMars_VuMark
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -67,7 +66,7 @@ MonoBehaviour:
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
   webcam:
-    deviceNameSetInEditor: HD Webcam C525
+    deviceNameSetInEditor: HD Pro Webcam C920
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
