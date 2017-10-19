@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 2007868158}
   - component: {fileID: 2007868159}
   m_Layer: 0
-  m_Name: composition-c
+  m_Name: Painting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
