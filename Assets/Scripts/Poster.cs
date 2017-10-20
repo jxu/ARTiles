@@ -18,7 +18,7 @@ public class Poster : MonoBehaviour
 		float spUnitsWidth = sp.rect.width / pixelsPerUnit;
 		float spUnitsHeight = sp.rect.height / pixelsPerUnit;
 
-		print ("Sprite width height (units): " + spUnitsWidth + " " + spUnitsHeight);
+		//print ("Sprite width height (units): " + spUnitsWidth + " " + spUnitsHeight);
 
 		// Compensate for parent's scale
 		Vector3 parentScale = transform.parent.localScale;

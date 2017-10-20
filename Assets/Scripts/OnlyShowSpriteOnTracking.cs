@@ -12,7 +12,6 @@ public class OnlyShowSpriteOnTracking : MonoBehaviour, ITrackableEventHandler
 
 	void Start()
 	{
-		// Must be set before TrackableEventHandler is registered
 		// Get child painting renderer
 		paintingRenderer = gameObject.GetComponentInChildren<Renderer>();
 
