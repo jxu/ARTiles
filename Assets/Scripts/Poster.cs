@@ -10,7 +10,7 @@ public class Poster : MonoBehaviour
 
 	void Start () 
 	{
-		// Scale sprite from arbitrary pixel size to Unity units
+		// Scale sprite from arbitrary pixel size to Unity units (real world meters)
 		SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
 		Sprite sp = renderer.sprite;
 		float pixelsPerUnit = sp.pixelsPerUnit;

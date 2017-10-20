@@ -16,9 +16,9 @@ MonoBehaviour:
     ufoLicenseKey: QWE0cm9ydi8vLy8vQUFBQUtPd1huSUMyRVVhcXVLNEF0NkR1eWI5Z1gzOXRUZXZVSDR3Rmc4MkZVRDhKK054Z3hPMlNmMGVuWlRqVWxrd0s5QWlKOG9HMU5GZTBlUm13QTNmT1ZqdjdMeVE3cFlWMTdMQy9SaSsvWEJoaTFzYTZ0VXllTDNpSHdRMXpyZE5IbEpvWE1MQUY5dllSamFJN0xnaEJCMjFScFVMNWt4Q1RIWk42RmFKVmVVbUYwcnFBUmdqVTdBcjhDT1N6aHVaajVBdnlQcjJqYXgwTWcxUGJiWFlkOE5YRzJYQ0NsTk1wa0RBNm1yRkRNK1U0d01Ea0o2WUVkOVQzUGRkMW9FcFRVOUpQVG85dWIzRUR1MVFVWEU2VngyODRma01mblFmVVJwUTNPRk5aZ0FmWVU2RjlOWTYyT1dFcGJqUm5HaEtIVGJVWkNQUG9xeWR2ZWUvakorb3NaSlZsdUVoM3REWFErSG9EQWdCTE9HUXQ=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
+    maxSimultaneousImageTargets: 6
     maxSimultaneousObjectTargets: 1
-    useDelayedLoadingObjectTargets: 0
+    useDelayedLoadingObjectTargets: 1
     cameraDirection: 0
     mirrorVideoBackground: 0
   digitalEyewear:
@@ -45,11 +45,8 @@ MonoBehaviour:
   databaseLoad:
     dataSetsToLoad:
     - VuforiaMars_Images
-    - VuforiaMars_Object_OT
-    - VuforiaMars_VuMark
     dataSetsToActivate:
     - VuforiaMars_Images
-    - VuforiaMars_Object_OT
   videoBackground:
     clippingMode: 0
     numDivisions: 2
