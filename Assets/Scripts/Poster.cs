@@ -20,8 +20,13 @@ public class Poster : MonoBehaviour
 
 		print ("Sprite width height (units): " + spUnitsWidth + " " + spUnitsHeight);
 
-		transform.localScale = new Vector3 (realSizeWidth / spUnitsWidth, 
-			                          		realSizeHeight / spUnitsHeight, 
+		// Compensate for parent's scale
+		Vector3 parentScale = transform.parent.localScale;
+		float transformWidth = (realSizeWidth / spUnitsWidth) / parentScale.x;
+		float transformHeight = (realSizeHeight / spUnitsHeight) / parentScale.y;
+
+
+		transform.localScale = new Vector3 (transformWidth, transformHeight, 
 											transform.localScale.z);
 
 	}

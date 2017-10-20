@@ -8,16 +8,13 @@ using Vuforia;
 public class OnlyShowSpriteOnTracking : MonoBehaviour, ITrackableEventHandler 
 {
 	private TrackableBehaviour mTrackableBehaviour;
-	private GameObject painting;
 	public Renderer paintingRenderer; 
-
-
 
 	void Start()
 	{
 		// Must be set before TrackableEventHandler is registered
-		painting = GameObject.FindWithTag("Painting"); // Associated painting
-		paintingRenderer = painting.GetComponent<Renderer>();
+		// Get child painting renderer
+		paintingRenderer = gameObject.GetComponentInChildren<Renderer>();
 
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (mTrackableBehaviour)
@@ -31,6 +28,9 @@ public class OnlyShowSpriteOnTracking : MonoBehaviour, ITrackableEventHandler
 		TrackableBehaviour.Status previousStatus,
 		TrackableBehaviour.Status newStatus)
 	{
+		if (!paintingRenderer)
+			return;
+
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
