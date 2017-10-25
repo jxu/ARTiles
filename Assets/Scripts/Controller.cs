@@ -6,6 +6,9 @@ public class Controller : MonoBehaviour {
 
 	public GameObject[] allImageTargets;
 	public int imageTargetsCount;
+	public Material spritesDefault;
+	public Material grayscale;
+
 	private int selectedTargetIndex = 0;
 	private string indexText;
 
@@ -49,7 +52,14 @@ public class Controller : MonoBehaviour {
 			}
 
 			// TODO: inefficient, fix later
-			indexText = "Index: " + selectedTargetIndex.ToString();
+			indexText = "Target Index: " + selectedTargetIndex.ToString();
+
+			for(int i = 0; i < imageTargetsCount; i++)
+			{
+				Transform painting = allImageTargets[i].transform.GetChild(0);
+				Renderer renderer = painting.GetComponent<Renderer>();
+				renderer.material = (i == selectedTargetIndex) ? grayscale : spritesDefault;
+			}
 
 		}
 

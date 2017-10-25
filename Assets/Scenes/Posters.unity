@@ -433,6 +433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allImageTargets: []
   imageTargetsCount: 0
+  spritesDefault: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  grayscale: {fileID: 2100000, guid: 0acd499956d717345bc6b30c2283c199, type: 2}
 --- !u!1001 &1319278488
 Prefab:
   m_ObjectHideFlags: 0
