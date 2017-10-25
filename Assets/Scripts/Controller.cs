@@ -36,18 +36,22 @@ public class Controller : MonoBehaviour {
 
 	void handleInput()
 	{
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedTargetIndex > 0)
+		if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			--selectedTargetIndex;
-		}
+			if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedTargetIndex > 0)
+			{
+				--selectedTargetIndex;
+			}
 
-		if (Input.GetKeyDown(KeyCode.RightArrow) && selectedTargetIndex < imageTargetsCount-1)
-		{
-			++selectedTargetIndex;
-		}
+			if (Input.GetKeyDown(KeyCode.RightArrow) && selectedTargetIndex < imageTargetsCount-1)
+			{
+				++selectedTargetIndex;
+			}
 
-		// TODO: inefficient, fix later
-		indexText = "Index: " + selectedTargetIndex.ToString();
+			// TODO: inefficient, fix later
+			indexText = "Index: " + selectedTargetIndex.ToString();
+
+		}
 
 	}
 
