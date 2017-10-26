@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Poster : MonoBehaviour 
 {
+	public int spriteIndex = -1;
 	public float realSizeWidth;
 	public float realSizeHeight;
 
 
 	void Start () 
+	{
+		ScaleReal();
+	}
+
+	public void ScaleReal()
 	{
 		// Scale sprite from arbitrary pixel size to Unity units (real world meters)
 		SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -27,7 +33,6 @@ public class Poster : MonoBehaviour
 
 
 		transform.localScale = new Vector3 (transformWidth, transformHeight, 
-											transform.localScale.z);
-
+			transform.localScale.z);
 	}
 }
