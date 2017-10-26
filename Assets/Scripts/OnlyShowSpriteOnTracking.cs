@@ -8,12 +8,12 @@ using Vuforia;
 public class OnlyShowSpriteOnTracking : MonoBehaviour, ITrackableEventHandler 
 {
 	private TrackableBehaviour mTrackableBehaviour;
-	public Renderer paintingRenderer; 
+	GameObject painting;
 
 	void Start()
 	{
-		// Get child painting renderer
-		paintingRenderer = gameObject.GetComponentInChildren<Renderer>();
+		// Get child painting
+		painting = transform.GetChild(0).gameObject;
 
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (mTrackableBehaviour)
@@ -27,20 +27,18 @@ public class OnlyShowSpriteOnTracking : MonoBehaviour, ITrackableEventHandler
 		TrackableBehaviour.Status previousStatus,
 		TrackableBehaviour.Status newStatus)
 	{
-		if (!paintingRenderer)
-			return;
-
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
 		{
 			Debug.Log("Showing image target");
-			paintingRenderer.enabled = true;
+			painting.SetActive(true);
+
 		}
 		else
 		{
 			Debug.Log("Hiding image target");
-			paintingRenderer.enabled = false;
+			painting.SetActive(false);
 		}
 	}   
 }
