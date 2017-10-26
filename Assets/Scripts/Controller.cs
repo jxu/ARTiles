@@ -7,8 +7,6 @@ public class Controller : MonoBehaviour {
 	
 	public Material spritesDefault;
 	public Material grayscale;
-	public float realHeightDelta;
-	public float realWidthDelta;
 
 	private int selectedTarget = 0;
 	private string indexText;
@@ -16,6 +14,9 @@ public class Controller : MonoBehaviour {
 	private GameObject[] allImageTargets;
 	private int imageTargetsCount;
 
+	const float realHeightDelta = 0.1f;
+	const float realWidthDelta = 0.1f;
+	const float minPosterLength = 0.01f;  // Can't make poster smaller than this
 
 
 	void Start () 
@@ -69,6 +70,7 @@ public class Controller : MonoBehaviour {
 			// TODO: inefficient, fix later
 			indexText = "Target Index: " + selectedTarget.ToString();
 
+			// TODO: Have initial selection highlighted
 			for(int i = 0; i < imageTargetsCount; i++)
 			{
 				Transform thisPosterTransform = allImageTargets[i].transform.GetChild(0);
@@ -102,13 +104,15 @@ public class Controller : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.W))
 				poster.realHeight += realHeightDelta;
 
-			if (Input.GetKeyDown(KeyCode.S) && poster.realHeight > realHeightDelta)
+			if (Input.GetKeyDown(KeyCode.S) && 
+				poster.realHeight - realHeightDelta > minPosterLength)
 				poster.realHeight -= realHeightDelta;
 
 			if (Input.GetKeyDown(KeyCode.D))
 				poster.realWidth += realWidthDelta;
 
-			if (Input.GetKeyDown(KeyCode.A) && poster.realWidth > realWidthDelta)
+			if (Input.GetKeyDown(KeyCode.A) && 
+				poster.realWidth - realWidthDelta > minPosterLength)
 				poster.realWidth -= realWidthDelta;
 
 			poster.ScaleReal();
