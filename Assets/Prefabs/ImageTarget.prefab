@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteIndex: -1
-  realSizeWidth: 0.6
-  realSizeHeight: 0.3
+  realWidth: 0.6
+  realHeight: 0.6
 --- !u!114 &114318391285180540
 MonoBehaviour:
   m_ObjectHideFlags: 1

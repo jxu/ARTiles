@@ -5,8 +5,8 @@ using UnityEngine;
 public class Poster : MonoBehaviour 
 {
 	public int spriteIndex = -1;
-	public float realSizeWidth;
-	public float realSizeHeight;
+	public float realWidth;
+	public float realHeight;
 
 
 	void Start () 
@@ -28,8 +28,8 @@ public class Poster : MonoBehaviour
 
 		// Compensate for parent's scale
 		Vector3 parentScale = transform.parent.localScale;
-		float transformWidth = (realSizeWidth / spUnitsWidth) / parentScale.x;
-		float transformHeight = (realSizeHeight / spUnitsHeight) / parentScale.y;
+		float transformWidth = (realWidth / spUnitsWidth) / parentScale.x;
+		float transformHeight = (realHeight / spUnitsHeight) / parentScale.y;
 
 
 		transform.localScale = new Vector3 (transformWidth, transformHeight, 
