@@ -8,15 +8,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AYJfdWH/////AAAAGVkAdrHBUkhbs/RFVBRHiJhtMH8kcWXALoNiEdmM8Ra1i2IrvHmapWRb0TIBOEpmJajFbGBLimjJ2Ss/sa818TYD42+5M7hAeEEnU2wxN1EmAPY5lBvyKkxtFhQfgewMfeU8f6n+sOv5VaUvhPaobJfD2SjVlLwANLTeukFg5Mz2dR1OE4ivEBUsaWbxc8NsXQncMxWefIpinvgzJruQSbwrPPAKhWFmYcfTXfDFheGM2J9eatYxvWDRZywLPNl9fl4nmjGCZoF523rjyFdg7HZFDWKSPdIfS2bOUxVR1FnDhfv3i8SmANMJlU090rthk6RvUppluna19N8qYgcjWdxFPHFd/7sE/JJ3ZLE3IJPv
-    ufoLicenseKey: QWE0cm9ydi8vLy8vQUFBQUtPd1huSUMyRVVhcXVLNEF0NkR1eWI5Z1gzOXRUZXZVSDR3Rmc4MkZVRDhKK054Z3hPMlNmMGVuWlRqVWxrd0s5QWlKOG9HMU5GZTBlUm13QTNmT1ZqdjdMeVE3cFlWMTdMQy9SaSsvWEJoaTFzYTZ0VXllTDNpSHdRMXpyZE5IbEpvWE1MQUY5dllSamFJN0xnaEJCMjFScFVMNWt4Q1RIWk42RmFKVmVVbUYwcnFBUmdqVTdBcjhDT1N6aHVaajVBdnlQcjJqYXgwTWcxUGJiWFlkOE5YRzJYQ0NsTk1wa0RBNm1yRkRNK1U0d01Ea0o2WUVkOVQzUGRkMW9FcFRVOUpQVG85dWIzRUR1MVFVWEU2VngyODRma01mblFmVVJwUTNPRk5aZ0FmWVU2RjlOWTYyT1dFcGJqUm5HaEtIVGJVWkNQUG9xeWR2ZWUvakorb3NaSlZsdUVoM3REWFErSG9EQWdCTE9HUXQ=
+    vuforiaLicenseKey: 
+    ufoLicenseKey: QWJhUjNKdi8vLy8vQUFBQUtFZU0xK3M3SDA1bHR2MDBJcGZmcDF4cmo3MG9IMG5iUTNheWpHZisyYkxsRHcvRnp2VG1tUVM1MytuOVlZS1RUc2dXeHhhYUVDOWJ6MmYwOHVnOHkzUlMrYVQ5OFAyakN2dUZ4dlJFZEpKSXd6MlY3N0M0Y0JWbTUzVVppMFdOQVBXLy92OXVMbjBMb3d4ODBxcXNxMGlqL2JGb3FmQ2Q1Vnd6VCtQTm9SbmVmSzQxSDRBZE9jRVkyckZCMXVPbTJ2UzVkSWtmK3doMFZZdFBpMWRGNU1TSytxNHIyMFFXWExONkNXTHpyNHlZeXA2dDNBL2hORjZEaUlmbGVHQm90MFlwajYvT2dkREJnVUljUW9aQ0FVMCtoZUp0TTh0SGhHRmNhcU52bnRyenF5dFNlbjVWK2tkUVQxSVF0czdYU0MycW5LTFV6NnhMSzNLNFJQK01oUEVvRVJaM2I0V2ZVMWdyV0k4VU8rQTU=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 6
+    maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
@@ -45,8 +45,12 @@ MonoBehaviour:
   databaseLoad:
     dataSetsToLoad:
     - VuforiaMars_Images
+    - VuforiaMars_Object_OT
+    - VuforiaMars_VuMark
     dataSetsToActivate:
     - VuforiaMars_Images
+    - VuforiaMars_Object_OT
+    - VuforiaMars_VuMark
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -63,7 +67,7 @@ MonoBehaviour:
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
   webcam:
-    deviceNameSetInEditor: HD Pro Webcam C920
+    deviceNameSetInEditor: 
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
