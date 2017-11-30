@@ -24,6 +24,11 @@ public class RendererManager : MonoBehaviour {
         SetState(true);
     }
 
+    public bool Rendering()
+    {
+        return renderers[0].enabled;
+    }
+
     public string getName()
     {
         return this.name;
