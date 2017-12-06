@@ -82,7 +82,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
  
         foreach (var bhvr in mVuMarkManager.GetActiveBehaviours())
         {
-            //Debug.Log("Sorting through VuMark Manager");
             return bhvr.VuMarkTarget;
         }
         return null;
@@ -92,12 +91,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     {
         mVuMarkManager = TrackerManager.Instance.GetStateManager().GetVuMarkManager();
         return mVuMarkManager.GetActiveVuMarks();
-    }
-
-    /* Retrieves all game objects */
-    public IEnumerable<VuMarkBehaviour> GetAllBehaviors()
-    {
-        return TrackerManager.Instance.GetStateManager().GetVuMarkManager().GetActiveBehaviours();
     }
 
     public string FurnitureLookup(VuMarkTarget vuMarkObj)
@@ -164,49 +157,21 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
         populateDictionary();
-        VuMarkTarget vuMarkObj = GetVuMarkObj();
         IEnumerable<VuMarkTarget> allTargets = GetVuMarkTargets();
 
-        if (vuMarkObj == null)
-            return;
         /* Enable rendering in GameObjects with multiple children 
          * (if name matches): */
 
         foreach (var component in nRendererComponents)
         {
             string componentName = component.getName();
-            bool loadVariable = false;
             foreach (var target in allTargets)
             {
                 string vuMarkName = FurnitureLookup(target);
-                loadVariable = vuMarkName.CompareTo(componentName) == 0;
-                    component.SetState(loadVariable);
+                component.SetState(vuMarkName.CompareTo(componentName) == 0);
             }
         }
-
-        /* This is the single method
-         * 
-         *         string vuMarkName = FurnitureLookup(vuMarkObj);
-
-         * foreach (var component in nRendererComponents)
-        {
-            string componentName = component.getName();
-
-            bool loadVariable = vuMarkName.CompareTo(componentName) == 0;
-
-            Debug.LogFormat("Variable {0} is {1} loaded. Comp name {2}. " +
-                "VuName {3}", componentName, loadVariable.ToString(),
-                component.getName(), vuMarkName);
-
-            /* If the component name is equal to the VuMarkID, it will be loaded */
-        /*    component.SetState(loadVariable);
-
-        }
-        */
-
-        //foreach (var component in rendererComponents)
-          //  component.enabled = false;
-
+        
         // Ensures colliders are disabled
         foreach (var component in colliderComponents)
             component.enabled = false;
@@ -237,7 +202,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             {"1", "Chair"},
             {"999", "Chair"},
             {"2", "Table"},
-            {"3", "Cup"}
+            {"3", "Vase"}
         };
     }
 
